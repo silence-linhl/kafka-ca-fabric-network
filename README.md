@@ -77,7 +77,7 @@ git clone https://github.com/banbanpeppa/kafka-ca-fabric-network.git
 cd kafka-ca-fabric-network
 ```
 NOTE : Give exec permissions to the shell scripts
-```chmod 777 ./script-name.sh```
+```chmod 777 ./*.sh```
 - Generate the crypto-material
 ```bash
 ./generate.sh
