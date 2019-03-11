@@ -5,8 +5,10 @@ services:
 
     zookeeper:
         image: hyperledger/fabric-zookeeper
-        volumes:
-            - ./hosts:/etc/hosts
+        ports:
+            - 2181
+            - 2888
+            - 3888
 
     kafka:
         image: hyperledger/fabric-kafka
@@ -19,8 +21,6 @@ services:
             - KAFKA_MIN_INSYNC_REPLICAS=2
         ports:
             - 9092
-        volumes:
-            - ./hosts:/etc/hosts
 
     orderer:
         image: hyperledger/fabric-orderer

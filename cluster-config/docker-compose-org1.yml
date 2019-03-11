@@ -32,7 +32,7 @@ services:
         container_name: zookeeper0
         environment:
             - ZOO_MY_ID=1
-            - ZOO_SERVERS=server.1=zookeeper0:32844:32843 server.2=zookeeper1:32841:32840 server.3=zookeeper2:32817:32816
+            - ZOO_SERVERS=server.1=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
         ports:
             - "32845:2181"
             - "32844:2888"
@@ -49,7 +49,7 @@ services:
         container_name: zookeeper1
         environment:
             - ZOO_MY_ID=2
-            - ZOO_SERVERS=server.1=zookeeper0:32844:32843 server.2=zookeeper1:32841:32840 server.3=zookeeper2:32817:32816
+            - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
         ports:
             - "32842:2181"
             - "32841:2888"
@@ -59,6 +59,23 @@ services:
              aliases:
                - ${CORE_PEER_NETWORKID}
 
+    zookeeper2:
+        extends:
+            file: docker-compose-base.yml
+            service: zookeeper
+        container_name: zookeeper2
+        environment:
+            - ZOO_MY_ID=3
+            - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+        ports:
+            - "32818:2181"
+            - "32817:2888"
+            - "32816:3888"
+        networks:
+          behave:
+             aliases:
+               - ${CORE_PEER_NETWORKID}
+               
     kafka0:
         extends:
             file: docker-compose-base.yml
