@@ -69,12 +69,12 @@ We have a simple network configuration
 cd $GOPATH/src/github.com/
 mkdir hyperledger
 cd hyperledger
-git clone https://github.com/banbanpeppa/kafka-ca-fabric-network.git
+git clone https://github.com/hyperledger/fabric.git
 ```
 - Clone this repository and enter the directory.
 ```bash
-git clone https://github.com/banbanpeppa/kafka-fabric-network.git
-cd kafka-fabric-network
+git clone https://github.com/banbanpeppa/kafka-ca-fabric-network.git
+cd kafka-ca-fabric-network
 ```
 NOTE : Give exec permissions to the shell scripts
 ```chmod 777 ./script-name.sh```
