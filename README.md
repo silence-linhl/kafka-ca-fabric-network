@@ -38,7 +38,7 @@ We have a simple network configuration
 │   ├── docker-compose-peer-org3.yml
 │   └── docker-compose-solo.yml
 ├── generate.sh
-install_chaincode.sh
+├── install_chaincode.sh
 ├── README.md
 ├── start.sh
 ├── stop.sh
