@@ -38,7 +38,7 @@ We have a simple network configuration
 │   ├── docker-compose-peer-org3.yml
 │   └── docker-compose-solo.yml
 ├── generate.sh
-install_chaincode.sh
+├── install_chaincode.sh
 ├── README.md
 ├── start.sh
 ├── stop.sh
@@ -69,15 +69,15 @@ install_chaincode.sh
 cd $GOPATH/src/github.com/
 mkdir hyperledger
 cd hyperledger
-git clone https://github.com/banbanpeppa/kafka-ca-fabric-network.git
+git clone https://github.com/hyperledger/fabric.git
 ```
 - Clone this repository and enter the directory.
 ```bash
-git clone https://github.com/banbanpeppa/kafka-fabric-network.git
-cd kafka-fabric-network
+git clone https://github.com/banbanpeppa/kafka-ca-fabric-network.git
+cd kafka-ca-fabric-network
 ```
 NOTE : Give exec permissions to the shell scripts
-```chmod 777 ./script-name.sh```
+```chmod 777 ./*.sh```
 - Generate the crypto-material
 ```bash
 ./generate.sh
