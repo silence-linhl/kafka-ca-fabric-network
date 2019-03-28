@@ -1,0 +1,27 @@
+version: '2'
+
+# networks:
+#     behave:
+
+services:
+
+ 
+    kafka3:
+        extends:
+            file: docker-compose-base.yml
+            service: kafka
+        container_name: kafka3
+        environment:
+            - KAFKA_ADVERTISED_HOST_NAME=kafka3
+            - KAFKA_BROKER_ID=3
+            - KAFKA_ZOOKEEPER_CONNECT=zookeeper0:2181,zookeeper1:2181,zookeeper2:2181
+            - KAFKA_MESSAGE_MAX_BYTES=${KAFKA_MESSAGE_MAX_BYTES}
+            - KAFKA_REPLICA_FETCH_MAX_BYTES=${KAFKA_REPLICA_FETCH_MAX_BYTES}
+            - KAFKA_REPLICA_FETCH_RESPONSE_MAX_BYTES=${KAFKA_REPLICA_FETCH_RESPONSE_MAX_BYTES}
+        ports:
+            - "9092:9092"
+        network_mode: "host"
+        # networks:
+        #   behave:
+        #      aliases:
+        #        - ${CORE_PEER_NETWORKID}
